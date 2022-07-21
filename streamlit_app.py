@@ -8,9 +8,11 @@ hide_streamlit_style = """
 footer {visibility: hidden;}
 </style>
 """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
 st.title('WOW!HKK')
-st.balloons()
-st.image('resource/pp.jpg')
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+mood = st.sidebar.text_input('Write down your mood at right now please.')
+if mood:
+    st.balloons()
+    st.image('resource/pp.jpg')
+    st.success(mood)
 
