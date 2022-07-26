@@ -9,10 +9,14 @@ hide_streamlit_style = """
 footer {visibility: hidden;}
 </style>
 """
-st.title('WOW!HKK')
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.title('WOW!HKK')
+
 mood = st.sidebar.text_input('Write down your mood at right now please.')
-img_file_buffer = st.sidebar.camera_input("Take a picture")
+take = st.sidebar.checkbox('Take a picture to upload')
+img_file_buffer = None
+if take:
+    img_file_buffer = st.sidebar.camera_input("Take a picture")
 if mood and img_file_buffer:
     st.balloons()
     img = Image.open(img_file_buffer)
