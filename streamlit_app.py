@@ -1,7 +1,11 @@
 import streamlit as st
 from PIL import Image
 
-st.set_page_config('HKK...')
+st.set_page_config(
+    page_title="HKK...",
+    page_icon="✅",
+    layout="wide",
+)
 
 hide_streamlit_style = """
 <style>
